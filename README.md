@@ -35,7 +35,7 @@ Usage
 Clone the repository:
 bash
 
-git clone https://github.com/sahazadalam/python-chatbot.git
+git clone https://github.com/sahazadalam/ChatBot_Using_Python.git
 cd python-chatbot
 Add the chatbot avatar image (bot3.png) to the directory.
 Run the chatbot:
