@@ -130,6 +130,131 @@ Edges in the MST:
 Total cost of MST: 19
 
 
+
+
+
+
+
+
+
+
+
+print('MENU DRIVEN PROGRAM')
+print('1. Find the Perfect number or not')
+print('2. Find the Armstrong number or not')
+print('3. Find the Palindrome number or not')
+print('4. Exit')
+
+while True:
+    print('\n*******************************')
+    Choice = int(input('\nEnter a Choice: '))
+
+    if Choice == 1:
+        print('\nPERFECT NUMBER OR NOT')
+        num = int(input('Enter a number: '))
+        Sum = 0
+        for i in range(1, num):
+            if num % i == 0:
+                Sum += i
+        if Sum == num:
+            print(num, 'is a Perfect Number.')
+        else:
+            print(num, 'is not a Perfect Number.')
+
+    elif Choice == 2:
+        print('\nARMSTRONG NUMBER OR NOT')
+        num = int(input("Enter a number: "))
+        Sum = 0
+        temp = num
+        n = len(str(num))
+        while temp > 0:
+            digit = temp % 10
+            Sum += digit ** n
+            temp //= 10
+        if num == Sum:
+            print(num, "is an Armstrong number.")
+        else:
+            print(num, "is not an Armstrong number.")
+
+    elif Choice == 3:
+        print('\nPALINDROME NUMBER OR NOT')
+        num = int(input('Enter a number: '))
+        temp = num
+        rev = 0
+        while num > 0:
+            rev = rev * 10 + num % 10
+            num = num // 10
+        print('Reverse of', temp, 'is', rev)
+        if temp == rev:
+            print('So, Entered Number is Palindrome.')
+        else:
+            print('So, Entered Number is not Palindrome.')
+
+    elif Choice == 4:
+        print("Exited")
+        break
+
+    else:
+        print('Invalid Choice!')
+
+
+
+
+
+file = open("data1.txt", 'x')
+file.write("hello!")
+file.close()
+
+file = open("data1.txt", "r")
+print(file.read())
+file.close()
+
+file = open("data1.txt", "r")
+data = file.read()
+print("Number of characters in a file: {}".format(len(data)))
+file.close()
+
+file = open("data1.txt", "r")
+data = file.read()
+words = data.split()
+print("Number of words in a file: {}".format(len(words)))
+file.close()
+
+file = open("data1.txt", "r")
+data = file.readlines()
+print("Number of lines in a file: {}".format(len(data)))
+file.close()
+
+print("\nAfter appending: ")
+file = open("data1.txt", "a")
+file.writelines("\npython programming\nperl programming\nweb programming")
+file.close()
+
+file = open("data1.txt", "r")
+print(file.read())
+file.close()
+
+file = open("data1.txt", "r")
+data = file.read()
+print("Number of characters in a file: {}".format(len(data)))
+file.close()
+
+file = open("data1.txt", "r")
+data = file.read()
+words = data.split()
+print("Number of words in a file: {}".format(len(words)))
+file.close()
+
+file = open("data1.txt", "r")
+data = file.readlines()
+print("Number of lines in a file: {}".format(len(data)))
+file.close()
+
+
+
+
+
+
 python chatbot.py
 Example Queries
 "Hello"
