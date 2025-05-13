@@ -255,6 +255,71 @@ file.close()
 
 
 
+
+
+
+
+REVA
+UNIVERSITY
+Python Programming Lab (B23DA0405)
+Demonstrate the usage of math and cmath module to find the roots of a
+1
+Quadratic Equation)
+import math
+import cmath
+a=float (input ("Enter the value of a"))
+b=float (input ("Enter the value of b"))
+c=float (input ("Enter the value of e"))
+d= (b**2) - (4*a*c)
+i f d==0:
+print("the rots are equal and real")
+root1=(-btmath. sqrt (d) ) / (2*a)
+root2=(-b-math. sqrt (d) ) / (2*a)
+print ("root1=", root1)
+print ("root2=", root2)
+e l i f d>0:
+print("the roots a r e distinct and real")
+root1=(-btmath. sqrt (d) ) / (2*a)
+root2=(-b-math. sqrt (d) ) / (2*a)
+print ("root1=", root1)
+print ("root2=", root2)
+else:
+print ("the roots are imaginary and real")
+root1=(-btcmath. sgrt (d)) / (2*a)
+root2=(-b-cmath. sgrt (d)) / (2*a)
+print("root1=", root1)
+print ("root2=", root2)
+PROF. NAGARAJU S, CSA 1
+R E VA
+UNIVERSITY
+Python Programming Lab (B23DA0405)
+OUTPUT 1
+E n t e r t h e v a l u e o f a 1
+E n t e r t h e v a l u e o f b 2
+E n t e r t h e v a l u e o f c 1
+t h e r o o t s a r e e q u a l a n d r e a l
+r o o t 1 = - 1 . 0
+r o o t 2 = - 1 . 0
+OUTPUT 2
+E n t e r t h e v a l u e o f a 1
+E n t e r t h e v a l u e o f b 7
+E n t e r t h e v a l u e o f c 1 2
+t h e r o o t s a r e d i s t i n c t a n d r e a l
+r o o t 1 = - 3 . 0
+r o o t 2 = - 4 . 0
+OUTPUT 3
+E n t e r t h e v a l u e o f a 1
+E n t e r t h e v a l u e o f b 1
+E n t e r t h e v a l u e o f c 1
+t h e r o o t s a r e i m a g i n a r y a n d r e a l
+O 0 t 1 = （ - 0 . 5 + 0 . 8 6 6 0 2 5 4 0 3 7 8 4 4 3 8 6 コ ）
+0 0 t 2 = （ - 0 . 5 - 0 . 8 6 6 0 2 5 4 0 3 7 8 4 4 3 8 6 コ ）
+PROF. NAGARAJU S, CSA 2
+
+
+
+
+
 python chatbot.py
 Example Queries
 "Hello"
