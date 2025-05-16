@@ -1,5 +1,232 @@
 ***********Python Chatbot Application***************
 
+4.	Write a program to sort the elements using Quick Sort technique.
+
+
+import java.util.Scanner;
+
+public class QuickSort {
+    private static int partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int i = low - 1;
+        for (int j = low; j < high; j++) {
+            if (arr[j] < pivot) {
+                i++;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+        return i + 1;
+    }
+
+    private static void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            int pi = partition(arr, low, high);
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        
+        quickSort(arr, 0, n - 1);
+        
+        System.out.println("Sorted array:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+
+
+
+
+2.	Write a program to implement Bubble Sort.
+import java.util.Scanner;
+
+public class Bubblesort {
+	       public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        
+	        System.out.print("Enter the number of elements: ");
+	        int n = scanner.nextInt();
+	        
+	        int[] arr = new int[n];
+	        
+	      
+	        System.out.println("Enter " + n + " elements:");
+	        for (int i = 0; i < n; i++) {
+	            arr[i] = scanner.nextInt();
+	        }
+	        
+	         for (int i = 0; i < n - 1; i++) {
+	            for (int j = 0; j < n - i - 1; j++) {
+	                if (arr[j] > arr[j + 1]) {
+	                
+	                    int temp = arr[j];
+	                    arr[j] = arr[j + 1];
+	                    arr[j + 1] = temp;
+	                }
+	            }
+	        }
+	        
+	        System.out.println("Sorted array:");
+	        for (int num : arr) {
+	            System.out.print(num + " ");
+	        }
+	        
+	        scanner.close();
+	    }
+	}
+Output:-
+Enter the number of elements: 5
+Enter 5 elements:
+ 6,2,1,4,5
+Sorted array:
+1 2 4 5 6
+
+
+
+
+
+
+
+
+3.	Write a program to sort the elements using Merge Sort technique.
+import java.util.Scanner;
+
+public class MergeSort {
+    public static void mergeSort(int[] arr, int left, int right) {
+        if (left < right) {
+            int mid = left + (right - left) / 2;
+
+            mergeSort(arr, left, mid);
+            mergeSort(arr, mid + 1, right);
+
+            merge(arr, left, mid, right);
+        }
+    }
+
+    public static void merge(int[] arr, int left, int mid, int right) {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+
+        int[] leftArr = new int[n1];
+        int[] rightArr = new int[n2];
+
+        for (int i = 0; i < n1; i++)
+            leftArr[i] = arr[left + i];
+        for (int j = 0; j < n2; j++)
+            rightArr[j] = arr[mid + 1 + j];
+
+        int i = 0, j = 0, k = left;
+        while (i < n1 && j < n2) {
+            if (leftArr[i] <= rightArr[j]) {
+                arr[k] = leftArr[i];
+                i++;
+            } else {
+                arr[k] = rightArr[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < n1) {
+            arr[k] = leftArr[i];
+            i++;
+            k++;
+        }
+
+        while (j < n2) {
+            arr[k] = rightArr[j];
+            j++;
+            k++;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of elements: ");
+        int n = scanner.nextInt();
+        int[] arr = new int[n];
+
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        System.out.println("Original array:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        mergeSort(arr, 0, n - 1);
+
+        System.out.println("Sorted array:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+        scanner.close();
+    }
+    
+}
+
+Output:-
+Enter the number of elements: 6
+Enter the elements: 6 4 3 1 2 7
+Original array:
+6 4 3 1 2 7 
+Sorted array:
+1 2 3 4 6 7
+
+
+import java.util.Arrays;
+
+public class Bubble {
+
+    public static void main(String[] args) {
+        int arraylist[] = {
+            6, 5, 4, 3, 2, 1
+        };
+        System.out.println("Final result:" + Arrays.toString(BubbleMethod(arraylist)));
+
+    }
+
+    public static int[] BubbleMethod(int[] arr) {
+        int temp;
+        for (int i = 0; i < arr.length - 1; i++) {
+
+            for (int j = 1; j < arr.length - i; j++) {
+                if (arr[j - 1] > arr[j]) {
+                    temp = arr[j - 1];
+                    arr[j - 1] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+            System.out.println("Result " + (i + 1) + ": " + Arrays.toString(arr));
+        }
+        return arr;
+    }
+}
+
+
+
 A simple and interactive chatbot application built with Python. This project combines speech recognition, text-to-speech synthesis, and a graphical user interface (GUI) for an engaging user experience.
 
 Key Features
